@@ -1,0 +1,233 @@
+[
+  {
+    "id": "sodio",
+    "name": "Sódio",
+    "method": "Espectofotometria",
+    "category": "Eletrólitos",
+    "items": [
+      {
+        "id": "sodio_item",
+        "name": "Sódio",
+        "type": "number",
+        "reference": {
+          "min": 135,
+          "max": 145,
+          "units": "mEq/L"
+        },
+        "generate": {
+          "method": "normal",
+          "parameters": {
+            "mean": 140,
+            "sd": 2,
+            "precision": 1
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "pcr",
+    "name": "Proteína C Reativa",
+    "method": "Imunoturbidimetria",
+    "category": "Geral",
+    "items": [
+      {
+        "id": "pcr_item",
+        "name": "Proteína C Reativa",
+        "type": "number",
+        "reference": {
+          "max": 0.5,
+          "units": "mg/dL"
+        },
+        "generate": {
+          "method": "normal",
+          "parameters": {
+            "mean": 0.2,
+            "sd": 0.05,
+            "precision": 2
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "bili",
+    "name": "Bilirrubina total e frações",
+    "method": "Espectofotometria",
+    "category": "Fígado",
+    "items": [
+      {
+        "id": "bilitot",
+        "name": "Bilirrubina total",
+        "type": "number",
+        "reference": {
+          "max": 1.2,
+          "units": "mg/dL"
+        },
+        "generate": {
+          "method": "derived",
+          "formula": "bilidir + biliind",
+          "parameters": {}
+        }
+      },
+      {
+        "id": "biliind",
+        "name": "Bilirrubina indireta",
+        "type": "number",
+        "reference": {
+          "max": 0.4,
+          "units": "mg/dL"
+        },
+        "generate": {
+          "method": "normal",
+          "parameters": {
+            "mean": 0.2,
+            "sd": 0.05,
+            "precision": 1
+          }
+        }
+      },
+      {
+        "id": "bilidir",
+        "name": "Bilirrubina direta",
+        "type": "number",
+        "reference": {
+          "max": 0.8,
+          "units": "mg/dL"
+        },
+        "generate": {
+          "method": "normal",
+          "parameters": {
+            "mean": 0.5,
+            "sd": 0.1,
+            "precision": 1
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "potassio",
+    "name": "Potássio",
+    "method": "Espectofotometria",
+    "category": "Eletrólitos",
+    "items": [
+      {
+        "id": "potassio_item",
+        "name": "Potássio",
+        "type": "number",
+        "reference": {
+          "min": 3.2,
+          "max": 5.4,
+          "units": "mEq/L"
+        },
+        "generate": {
+          "method": "normal",
+          "parameters": {
+            "mean": 4,
+            "sd": 0.2,
+            "precision": 1
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "hiv_elisa",
+    "name": "ELISA HIV",
+    "method": "ELISA",
+    "category": "Sorologia",
+    "items": [
+      {
+        "id": "hiv_item",
+        "name": "HIV",
+        "type": "options",
+        "values": ["Não Reagente", "Reagente", "Indeterminado", "Inválido"],
+        "reference": {
+          "expected": "Não Reagente",
+          "units": ""
+        },
+        "generate": {
+          "method": "text",
+          "parameters": {
+            "default": "Não Reagente"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "hcv",
+    "name": "Anti-HCV",
+    "method": "ELISA",
+    "category": "Sorologia",
+    "items": [
+      {
+        "id": "hcv_item",
+        "name": "Anti-HCV Total",
+        "type": "options",
+        "values": ["Não Reagente", "Reagente", "Indeterminado", "Inválido"],
+        "reference": {
+          "expected": "Não Reagente",
+          "units": ""
+        },
+        "generate": {
+          "method": "text",
+          "parameters": {
+            "default": "Não Reagente"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "creatinina",
+    "name": "Creatinina",
+    "method": "Enzimático",
+    "category": "Renal",
+    "items": [
+      {
+        "id": "creatinina_item",
+        "name": "Creatinina",
+        "type": "number",
+        "reference": {
+          "max": 1.2,
+          "units": "mEq/L"
+        },
+        "generate": {
+          "method": "normal",
+          "parameters": {
+            "mean": 0.7,
+            "sd": 0.15,
+            "precision": 2
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ureia",
+    "name": "Ureia",
+    "method": "Enzimático",
+    "category": "Renal",
+    "items": [
+      {
+        "id": "ureia_item",
+        "name": "Ureia",
+        "type": "number",
+        "reference": {
+          "max": 50,
+          "units": "mEq/L"
+        },
+        "generate": {
+          "method": "normal",
+          "parameters": {
+            "mean": 20,
+            "sd": 4,
+            "precision": 1
+          }
+        }
+      }
+    ]
+  }
+]
